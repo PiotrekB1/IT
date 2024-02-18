@@ -1,0 +1,20 @@
+---
+ - hosts: all
+   become: True
+   tasks:
+     - name: Usuwanie katalogu ansible
+       command: rm -r ansible
+     - name: Tworzenie nowego katalogu
+       command: mkdir ansible
+     - name: Tworzenie nowego pliku
+       ansible.builtin.file:
+          path: ansible/konfiguracja1.conf
+          state: touch
+     - name: Kopiowanie pliku konfiguracja1.conf
+       ansible.builtin.copy:
+          src: ansible/konfiguracja1.conf
+          remote_src: yes
+          dest: backup2/
+          owner: piotrek
+          group: piotrek
+          mode: u+rwx,g-wx,o-wx

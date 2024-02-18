@@ -1,0 +1,5 @@
+# Plik inwentaryzacyjny korzystający z wtyczki nmap
+plugin: nmap
+strict: False
+address: 192.168.168.128-254/24
+ports: False

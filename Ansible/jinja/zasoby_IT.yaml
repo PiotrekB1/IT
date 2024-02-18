@@ -1,0 +1,17 @@
+---
+- hosts: target1
+  become: True
+  
+  vars:
+    aplikacja: "SuperERP"
+    serweryDB: 3
+    DB_Engine: "Oracle"
+    CPU: "4 vCPU"
+    Memory: "4096 mb"
+    Dyski: "2 TB"
+    Adress_IP: "192.168.0.111"
+  tasks:
+    - name: Konfiguracja pliku
+      template: 
+        src: /usr/kurs/config.cfg.j2
+        dest: /usr/kurs1/

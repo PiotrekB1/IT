@@ -1,0 +1,12 @@
+
+- hosts: target1
+  become: true
+  vars:
+    ansible_python_interpreter: /bin/python3
+  tasks:
+    - name: Tworzymy nowy kontener i przypisujemy go do sieci
+      docker_container: 
+        name: db_test
+        image: "postgres:latest"
+        networks: 
+          - name: "bridge"

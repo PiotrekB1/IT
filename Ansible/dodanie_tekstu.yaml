@@ -1,0 +1,8 @@
+---
+ # dodanie tekstu
+ - hosts: target1
+   become: True
+   tasks:
+    - lineinfile:
+       path: kurs1/test.conf
+       line: 'Mój pierwszy kod'

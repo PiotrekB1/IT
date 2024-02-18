@@ -1,0 +1,15 @@
+---
+  - hosts: target1
+    become: True
+ 
+    tasks:
+     - name: Nowi Uzytkownicy
+       user:
+        name: "{{ item }}"
+        state: present
+       with_items:
+        - magazyn1
+        - magazyn2
+        - magazyn3 
+
+   

@@ -1,0 +1,25 @@
+---
+- hosts: target1
+  become: True
+  tasks:
+  - name: Tworzenie pliku apache.conf
+    ansible.builtin.file:
+      path: /usr/kurs/apache.conf
+      state: touch
+      owner: piotrek
+      group: piotrek
+      mode: u+rw,g-wx,o-rwx
+    tags: apache
+  - name: Tworzenie pliku mysql.conf
+    ansible.builtin.file:
+      path: /usr/kurs/mysql.conf
+      state: touch
+      owner: piotrek
+      group: piotrek
+      mode: u+rw,g-wx,o-rwx
+    tags: mysql
+
+# Wywołanie:
+# ansible-playbook -i inventory.yaml _testy.yaml --tags "apache"
+# ansible-playbook -i inventory.yaml _testy.yaml --tags "apache, mysql"
+# ansible-playbook -i inventory.yaml _testy.yaml --skip-tags "apache"

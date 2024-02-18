@@ -1,0 +1,13 @@
+- hosts: target1
+  become: True
+  tasks:
+    - name: Czy usługa działa
+      shell: systemctl status httpd.service
+      register: zmienna_httpd
+    - name: Zatrzymaj gdy działa
+      service: 
+        name: httpd
+        state: stopped
+      when: 
+        - zmienna_httpd.rc == 0
+        - ansible_os_family == "RedHat"

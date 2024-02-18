@@ -1,0 +1,26 @@
+---
+  - hosts: target1
+    become: yes
+
+    vars:
+      adresIP: "192.168.168.145"
+      ListenPort: 10051
+      StartAgents: 5
+      hostname: "{{ nazwa.stdout }}"
+
+    tasks:
+     - name: Zarejestruj hostname
+       command: hostname
+       register: nazwa
+           
+     - name: Konfiguracja pliku
+       template:
+        src: /usr/kurs/jinja/zabbix_agentd.conf
+        dest: /etc/zabbix/
+     - name: Dodanie Userparameter
+       lineinfile:
+        path: /etc/zabbix/zabbix_agentd.conf
+        line: "{{ item }}"
+       with_items:
+        - 'UserParameter=extra,ps aux | wc -1'
+        - 'UserParameter=extra,cat /etc/passwd | wc -1'

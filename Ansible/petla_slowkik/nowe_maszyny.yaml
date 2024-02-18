@@ -1,0 +1,5 @@
+slownik:
+  - adresIP: "192.168.1.220"
+    hostname: host1
+  - adresIP: "192.168.1.221"
+    hostname: host2

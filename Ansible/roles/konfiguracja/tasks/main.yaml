@@ -1,0 +1,5 @@
+- name: Dodanie EnableRemoteCommands
+  replace:
+    path: /etc/zabbix/zabbix_agentd.conf
+    regexp: 'EnableRemoteCommands=0'
+    replace: '#EnableRemoteCommands=0'

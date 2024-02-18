@@ -1,0 +1,22 @@
+---
+  - hosts: proxmox
+    become: True
+    
+    tasks:
+    - include_vars: ext.yaml
+    - name: Nowy kontener
+      community.general.proxmox:
+        node: proxmox
+        api_user: root@pam
+        api_password: Belinea03
+        api_host: 192.168.1.137
+        password: Superhaslo5
+        hostname: {{ item.hostname }}
+        ostemplate: 'local:vztmpl/ubuntu-20.04-standard_20.04-1_amd64.tar.gz'
+        storage: local-lvm
+        netif: '{"net0":"name=eth0,gw=192.168.1.1,ip={{ item.adresIP }}/24,bridge=vmbr0"}'
+        state: started
+      loop: "{{ a }}"    
+
+# ansible-playbook proxmox_dicionary.yaml -i inv_proxmox.yaml  (wywołanie playbooka)
+      

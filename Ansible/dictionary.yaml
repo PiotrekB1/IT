@@ -1,0 +1,15 @@
+---
+# Dodanie tekstu
+- hosts: target1
+  vars:
+    slownik:
+    - adresIP: "192.168.1.220"
+      hostname: host1
+    - adresIP: "192.168.1.221"
+      hostname: host2
+  become: True
+  tasks:
+    - lineinfile:
+        path: /usr/kurs/test.conf
+        line: "{{ item.adresIP }} oraz {{ item.hostname }}"
+      loop: "{{ slownik }}"

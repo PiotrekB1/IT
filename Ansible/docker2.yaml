@@ -1,0 +1,10 @@
+- hosts: target1
+  become: true
+  vars:
+    ansible_python_interpreter: /bin/python3
+  tasks:
+    - name: Uruchom kontener
+      docker_container: 
+        name: db_test
+        image: postgres:latest
+        command: ["sleep", "infinity"]

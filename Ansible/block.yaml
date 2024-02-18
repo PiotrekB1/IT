@@ -1,0 +1,14 @@
+- hosts: target1
+  become: True
+  tasks:
+    - block:
+      - ansible.builtin.file:
+        path: /usr/kurs/Debian.conf
+        state: touch
+      when: ansible_os_family == "Debian" 
+      
+    - block:
+      - ansible.builtin.file:
+        path: /usr/kurs/RedHatconf
+        state: touch
+      when: ansible_os_family == "RedHat" 

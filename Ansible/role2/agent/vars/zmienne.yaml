@@ -1,0 +1,13 @@
+a:
+- adresIP: "10.0.0.1"
+  hostname: host1
+- adresIP: "10.0.0.2"
+  hostname: host2
+- adresIP: "10.0.0.3"
+  hostname: host3
+- adresIP: "10.0.0.4"
+  hostname: host4
+- adresIP: "10.0.0.5"
+  hostname: host5
+- adresIP: "10.0.0.6"
+  hostname: host6     

@@ -1,0 +1,6 @@
+- include_vars: zmienne.yaml
+- name: Petla
+  lineinline:
+    path: /usr/kurs/test.conf
+    line: "{{ item.adresIP }} oraz {{ item.hostname }}"
+  loop: "{{ a }}"

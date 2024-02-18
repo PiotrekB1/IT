@@ -1,0 +1,19 @@
+---
+ - name: Nowi Uzytkownicy
+   become: True
+   hosts: target1
+   vars:
+    myusers:
+     - recepcja1
+     - recepcja2
+     - recepcja3
+   
+   
+   tasks:
+    - name: Tworzenie uzytkowników
+      user:
+       name: "{{ item }}"
+       state: present
+      loop: "{{ myusers }}" 
+
+   

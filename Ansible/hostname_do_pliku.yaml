@@ -1,0 +1,11 @@
+# Zmienna nazwa wskakuje do pliku kurs1/test.conf
+- hosts: target1
+  become: True
+  tasks:
+    - name: Pokaż hostname
+      command: hostname
+      register: nazwa
+    - debug: msg="{{ nazwa.stdout }}"
+    - lineinfile:
+       path: kurs1/test.conf
+       line: "{{ nazwa.stdout}}"

@@ -1,0 +1,5 @@
+- hosts: target1
+  become: true
+  tasks:
+    - mport_tasks: import1.yaml
+    - mport_tasks: import2.yaml

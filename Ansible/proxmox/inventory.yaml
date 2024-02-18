@@ -1,0 +1,24 @@
+---
+all:
+ hosts:
+  target1:
+   ansible_host: 192.168.168.147
+   ansible_ssh_pass: Belinea03
+  target2:
+   ansible_host: 192.168.168.148
+   ansible_ssh_pass: Belinea03
+test:
+ hosts:  
+  target3:
+   ansible_host: 192.168.168.20
+   ansible_ssh_pass: Belinea03
+serwer:
+ hosts:
+  localhost:
+    vars:
+      ansible_connection: local
+
+
+
+# target1 ansible_host=192.168.168.147 ansible_ssh_pass=Belinea03
+# target2 ansible_host=192.168.168.148 ansible_ssh_pass=Belinea03

@@ -1,0 +1,10 @@
+---
+  - hosts: target1
+    become: True
+    tasks:
+      - name: Tworzenie nowego pliku
+        ansible.builtin.file:
+          path: /usr/konfiguracja1.conf
+          state: touch
+        when: ansible_os_family == "RedHat"
+          

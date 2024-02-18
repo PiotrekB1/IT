@@ -1,0 +1,25 @@
+---
+- hosts: target1
+  become: true
+  tasks:
+    - name: Instalacja serwera www
+      dnf: 
+       name: httpd
+       state: latest
+    - name: Odblokowanie portu firewall
+      ansible.posix.firewalld:
+       port: 80/tcp
+       permanent: true
+       state: disabled
+    - name: Restart firewall
+      command: firewall-cmd --reload
+    - name: Włączenie usługi
+      command: systemctl enable --now httpd
+    
+           
+
+
+
+# firewall-cmd --permanent --add-port=80/tcp
+# firewall-cmd --reload
+# systemctl enable --now httpd

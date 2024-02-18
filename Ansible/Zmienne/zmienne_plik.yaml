@@ -1,0 +1,10 @@
+---
+name: Dodanie sdresu DNS
+hosts: agetz
+var_files:
+  - zmienne.yaml
+
+tasks:
+  -lineinfile:
+   path: /etc/resolv.conf
+   line: "nameserver {{ dns }}"

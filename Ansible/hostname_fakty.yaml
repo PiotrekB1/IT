@@ -1,0 +1,12 @@
+# Nauka użycia zmiennej
+
+- hosts: target1
+  become: True
+  tasks:
+    - name: Odpal zmienną
+      ansible.builtin.setup:
+        filter:
+          - "ansible_hostname"
+    - name: Wyswietl
+      debug:
+        msg: "{{ ansible_hostname }}"

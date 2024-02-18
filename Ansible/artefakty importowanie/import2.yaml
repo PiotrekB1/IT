@@ -1,0 +1,4 @@
+- name: Instalacja Apache
+  dnf:
+    name: mysql
+    state: latest

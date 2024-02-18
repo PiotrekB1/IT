@@ -1,0 +1,11 @@
+---
+# Dodanie tekstu
+- hosts: target1
+
+  become: True
+  tasks:
+    - include_vars: nowe_maszyny.yaml
+    - lineinfile:
+        path: /usr/kurs/test.conf
+        line: "{{ item.adresIP }} oraz {{ item.hostname }}"
+      loop: "{{ slownik }}"

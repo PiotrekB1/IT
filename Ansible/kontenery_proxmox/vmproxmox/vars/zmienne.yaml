@@ -1,0 +1,5 @@
+ustawienia:
+  - adresIP: "10.0.0.1"
+    hostname: aplikacja1
+  - adresIP: "10.0.0.2"
+    hostname: aplikacja2

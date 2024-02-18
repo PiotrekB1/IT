@@ -1,0 +1,9 @@
+---
+ # zamiana linii
+ - hosts: target1
+   become: True
+   tasks:
+    - lineinfile:
+       path: kurs1/test.conf
+       regexp: 'Mój pierwszy kod'
+       line: 'Podmianka'

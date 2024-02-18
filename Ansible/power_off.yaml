@@ -1,0 +1,6 @@
+---
+ - hosts: all
+   become: True
+   tasks:
+     - name: Wyłączenie systemów
+       command: systemctl poweroff

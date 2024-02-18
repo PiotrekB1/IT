@@ -1,0 +1,14 @@
+---
+ # dwa zadania zmiany pliku
+ - hosts: target1
+   become: True
+   tasks:
+      # Podmiana tekstu
+    - lineinfile:
+       path: kurs1/test.conf
+       regexp: 'Podmianka'
+       line: '3 zadanie'
+       # Dodanie kolejnego fragmentu tekstu
+    - lineinfile:
+       path: kurs1/test.conf
+       line: 'Jeszce coś tu dodaj'
