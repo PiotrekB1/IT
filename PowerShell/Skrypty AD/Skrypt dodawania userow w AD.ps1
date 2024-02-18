@@ -1,0 +1,3 @@
+﻿dsadd user "CN=informatyk01,OU=informatycy,DC=firma,DC=local" -samid informayk01 -upn informayk01@firma.local -pwd L@to2023! -mustchpwd yes -canchpwd yes -disabled no
+dsadd user "CN=informatyk01,OU=informatycy,DC=firma,DC=local" -samid informayk02 -upn informayk02@firma.local -pwd L@to2023! -mustchpwd yes -canchpwd yes -disabled no
+dsadd user "CN=informatyk01,OU=informatycy,DC=firma,DC=local" -samid informayk03 -upn informayk03@firma.local -pwd L@to2023! -mustchpwd yes -canchpwd yes -disabled no
