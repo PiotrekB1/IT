@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-rwx
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: myapp-rwx
+  template:
+    metadata:
+      labels:
+        app: myapp-rwx
+    spec:
+      volumes:
+      - name: rwx
+        persistentVolumeClaim:
+          claimName: nfs-rwx
+      containers:
+      - name: myapp
+        image: nginx
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        volumeMounts:
+        - name: rwx
+          mountPath: /pvc-data
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-rwx
+spec:
+  resources:
+    requests:
+      storage: 5Gi
+  volumeMode: Filesystem
+  storageClassName: nfs-client
+  accessModes:
+    - ReadWriteMany
