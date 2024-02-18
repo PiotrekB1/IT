@@ -1,0 +1,14 @@
+- git status - Sprawdzanie aktualnej gałęzi na której pracujemy
+- git checkout branch_1 - Polecenie umożliwiające przełączenie się na inną gałąź np. branch_1
+- git checkout –b nowy_branch_1 - Polecenie umożliwiające stworzenie nowej gałęzi i automatyczne przełączenie się na nią
+- git branch - Komenda wyświetlające wszystkie lokalne gałęzie z repozytorium (przez * oznaczony jest branch na którym obecnie pracujemy)
+- git branch -r - Komenda wyświetlająca listę gałęzi znajdujących się na zdalnym repozytorium
+- git branch –d - branch_1 Usunięcie dowolnej gałęzi np. branch_1
+- git push –u origin branch_1 - ↑ To polecenie uruchamiamy przy "wypchnięciu" naszych danych na zdalne repozytorium do wskazanej gałęzi
+- git pull origin branch_1 - ↓ Pobranie zmian ze zdalnego repozytorium z gałęzi branch_1
+- git merge branch_1 - Scalenie gałęzi branch_1 z gałęzią na której obecnie jesteśmy
+- git rebase branch_1 - Zaciągnięcie zmian z branch_1 do aktywnej gałęzi
+- git pull --rebase Pobranie najnowszych zmian z aktywnej zdalnej gałęzi
+- git stash - Zapisanie zmodyfikowanych plików na stosie i usunięcie ich z aktywnej gałęzi
+- git stash pop - Przywrócenie zmodfikowanych plików z pamięci stosu
+- git stash clear - Czyszczenie pamięci stosu

@@ -1,0 +1,14 @@
+- git init - Inicjalizacja repozytorium git
+- git status - Sprawdzanie aktualnego stanu repozytorium
+- git remote add origin http://github.com/... - To polecenie łączy nasze lokalne repozytorium z repozytorium stworzonym na serwerze Github
+- git config --global user.name "Imię nazwisko" - Zmiana imienia i nazwiska w ustawieniach Gita
+- git config --global user.email "email@email.com" - Zmiana emaila w ustawieniach gita
+- git push ↑ - "Wypchnięcie" - zakomitowanych zmian
+- git push -u origin master - ↑ To polecenie uruchamiamy przy pierwszym "wypchnięciu" naszych danych na zdalne repozytorium tak, aby git zapamiętał ustawienia odnośnie gałęzi (branch'a)
+- git pull ↓ - Pobranie zmian z repozytorium (ostatnio używana gałąź)
+- git pull origin master - ↓ Pobranie zmian ze zdalnego repozytorium z gałęzi master (jest to gałąź domyślna)
+- git add * - Dodanie wszystkich plików z danego katalogu do śledzenia zmian przez Gita
+- git add plik1.txt - Dodanie pliku plik1.txt do śledzenia zmian przez Gita
+- git add plik1.txt plik2.txt - Ta sama komenda co wyżej, tylko jednocześnie dodajemy 2 pliki
+- git add '*.txt' - Dodajemy wszystkie pliki z danego katalogu o rozszerzeniu .txt
+- git commit -m "Drobne zmiany" - Aby zapisać zmiany jakie dokonaliśmy uruchamiamy polecenie commit i podajemy w komunikacie informacje o zmianach
